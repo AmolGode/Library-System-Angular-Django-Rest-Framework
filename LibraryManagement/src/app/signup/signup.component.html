@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md 6  col-xm-12 col-sm-12 offset-xl-3 offset-lg-3">
+      <mat-card>
+        <mat-card-title>
+          <h1>Admin Signup Page</h1>
+        </mat-card-title>
+        <form [formGroup]="signupForm" (ngSubmit)="admin_signup(signupForm.value)">
+          <mat-card-content>
+            <div class="example-container">
+              <mat-form-field appearance="fill" class="example-full-width">
+                <mat-label>First Name</mat-label>
+                <input matInput [formControl]="first_name">
+              </mat-form-field>
+            </div>
+
+            <div class="example-container">
+              <mat-form-field appearance="fill" class="example-full-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput [formControl]="last_name">
+              </mat-form-field>
+            </div>
+
+
+            <div class="example-container">
+              <mat-form-field appearance="fill" class="example-full-width">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" [formControl]="email_id" required>
+                <mat-error *ngIf="email_id.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="example-container">
+              <mat-form-field appearance="fill" class="example-full-width">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+
+
+          </mat-card-content>
+
+          <mat-card-footer>
+            <div *ngIf="!spinnerFlag">
+              <button type="submit" mat-raised-button color="primary" [disabled]="!signupForm.valid">Signup</button>
+              <button type="reset" mat-raised-button>Reset</button>
+
+            </div>
+            <mat-spinner class="spinner" *ngIf="spinnerFlag"></mat-spinner>
+            <hr>
+            <a routerLink="/"> Already have account ? </a>
+          </mat-card-footer>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

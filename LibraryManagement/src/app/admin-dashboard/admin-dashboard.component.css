@@ -1,0 +1,51 @@
+
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+/* Custom Css */
+mat-card-footer{
+    text-align: center;
+}
+mat-card-footer button{
+    margin-left: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+.spinner{
+  margin: auto;
+}
+
+mat-card-title{
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+mat-card-title h1{
+    font-weight: bold;
+    font-size: 30px;
+    padding:25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }

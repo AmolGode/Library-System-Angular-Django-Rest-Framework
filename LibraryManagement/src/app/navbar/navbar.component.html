@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span><button mat-button (click)="logout()">Library Management System</button></span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="accent" routerLink="/student-book-list">
+      Book List For Students
+    </button>
+    <button mat-raised-button color="accent" (click)="logout()">
+      Logout
+    </button>
+    
+  </mat-toolbar>

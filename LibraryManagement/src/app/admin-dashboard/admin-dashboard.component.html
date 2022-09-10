@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-10 col-lg-10 col-md-10  col-xm-12 col-sm-12 offset-xl-1 offset-lg-1">
+            <mat-card>
+                <mat-card-title>
+                    <h1>Admin Dashboard</h1>
+                </mat-card-title>
+                <form [formGroup]="bookForm" (ngSubmit)="save_book(bookForm.value)">
+                    <mat-card-content>
+
+                        <div class="example-container">
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Book Name</mat-label>
+                                <input matInput formControlName="book_name" [(ngModel)]="editing_book_name">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="example-container">
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Book Author</mat-label>
+                                <input matInput formControlName="author_name" [(ngModel)]="editing_author_name">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="example-container">
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Publish Year</mat-label>
+                                <input matInput type="number" formControlName="publish_year" [(ngModel)]="editing_publish_year">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="example-container">
+                            <mat-form-field appearance="fill" class="example-full-width">
+                                <mat-label>Book Price</mat-label>
+                                <input matInput type="number" formControlName="book_price" [(ngModel)]="editing_book_price">
+                            </mat-form-field>
+                        </div>
+
+                    </mat-card-content>
+
+                    <mat-card-footer>
+                        <div *ngIf="!spinnerFlag">
+                            <button type="submit" mat-raised-button color="primary" *ngIf="!saveChangesBtn">Add Book</button>
+                            <button type="button" mat-raised-button color="primary" (click)="update_book(bookForm.value)" *ngIf="saveChangesBtn">Update Book Details</button>
+                            <button type="reset" mat-raised-button (click)="reset()">Reset</button>
+                        </div>
+                        <mat-spinner class="spinner" *ngIf="spinnerFlag"></mat-spinner>
+                        <hr>
+                    </mat-card-footer>
+                </form>
+            </mat-card>
+        </div>
+
+        <div class="col-xl-10 col-lg-10 col-md-10  col-xm-12 col-sm-12 offset-xl-1 offset-lg-1">
+            <app-admin-book-list></app-admin-book-list>
+        </div>
+    </div>
+</div>
