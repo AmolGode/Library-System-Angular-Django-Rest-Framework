@@ -15,6 +15,10 @@ export class AdminDashboardComponent implements OnInit {
   constructor(private apiCallService: ApiCallService, private router: Router, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('admin_id') == undefined)
+    {
+      this.router.navigate(['']);
+    }
   }
 
   spinnerFlag = false;
